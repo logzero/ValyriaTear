@@ -36,6 +36,8 @@
 #include "modes/battle/battle_utils.h"
 #include "modes/battle/battle_effects.h"
 
+#include "common/global/global.h"
+
 using namespace vt_utils;
 using namespace vt_audio;
 using namespace vt_video;

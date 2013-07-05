@@ -24,6 +24,8 @@
 #include "modes/shop/shop.h"
 #include "modes/battle/battle.h"
 
+#include "common/global/global.h"
+
 using namespace vt_audio;
 using namespace vt_mode_manager;
 using namespace vt_script;

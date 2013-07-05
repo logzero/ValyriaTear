@@ -32,8 +32,6 @@
 #include "engine/script/script.h"
 #include "engine/system.h"
 
-#include "common/global/global.h"
-
 namespace vt_battle
 {
 

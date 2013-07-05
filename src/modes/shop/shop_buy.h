@@ -22,8 +22,6 @@
 #ifndef __SHOP_BUY_HEADER__
 #define __SHOP_BUY_HEADER__
 
-#include "common/global/global.h"
-
 #include "shop_utils.h"
 
 namespace vt_shop

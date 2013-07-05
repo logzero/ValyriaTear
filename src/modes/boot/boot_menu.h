@@ -19,7 +19,6 @@
 #define __BOOT_MENU__
 
 #include "common/gui/option.h"
-#include "common/gui/menu_window.h"
 
 namespace vt_boot
 {

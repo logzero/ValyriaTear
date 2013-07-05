@@ -24,8 +24,6 @@
 
 #include "engine/mode_manager.h"
 
-#include "common/global/global.h"
-
 #include "common/gui/menu_window.h"
 
 #include "shop_utils.h"
@@ -445,14 +443,10 @@ public:
     void ChangeState(private_shop::SHOP_STATE new_state);
 
     //! \brief Returns true if the user has indicated they wish to buy or sell any items
-    bool HasPreparedTransaction() const {
-        return ((_total_costs != 0) || (_total_sales != 0));
-    }
+    bool HasPreparedTransaction() const;
 
     //! \brief Returns the number of drunes that the party would be left with after the marked purchases and sales
-    uint32 GetTotalRemaining() const {
-        return (vt_global::GlobalManager->GetDrunes() + _total_change_amount);
-    }
+    uint32 GetTotalRemaining() const;
 
     /** \name Exported class methods
     *** The methods in this group are avaiable to be called from within Lua. Their intended use is for setting shop settings

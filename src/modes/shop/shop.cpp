@@ -34,6 +34,7 @@
 #include "engine/system.h"
 
 #include "common/global/global.h"
+#include "common/global/global_skills.h"
 
 #include "engine/mode_manager.h"
 #include "modes/pause.h"
@@ -1630,6 +1631,20 @@ void ShopMode::ChangeState(SHOP_STATE new_state)
         IF_PRINT_WARNING(SHOP_DEBUG) << "invalid shop state: " << _state << std::endl;
         break;
     }
+}
+
+
+
+bool ShopMode::HasPreparedTransaction() const
+{
+    return ((_total_costs != 0) || (_total_sales != 0));
+}
+
+
+
+uint32 ShopMode::GetTotalRemaining() const
+{
+    return (vt_global::GlobalManager->GetDrunes() + _total_change_amount);
 }
 
 

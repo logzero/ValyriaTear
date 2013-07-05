@@ -19,7 +19,7 @@
 #include "engine/video/video.h"
 
 #include "common/dialogue.h"
-#include "common/global/global.h"
+//#include "common/global/global.h"
 #include "common/gui/gui.h"
 
 #include "battle.h"

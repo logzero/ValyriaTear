@@ -28,8 +28,6 @@
 
 #include "utils/utils_common.h"
 
-#include "common/global/global.h"
-
 #include "engine/mode_manager.h"
 
 #include <string>

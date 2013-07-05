@@ -24,11 +24,18 @@
 #ifndef __MENU_VIEWS__
 #define __MENU_VIEWS__
 
-#include "common/global/global.h"
+#include "common/global/global_utils.h"
 #include "common/gui/textbox.h"
-
 #include "common/gui/menu_window.h"
 #include "common/gui/option.h"
+
+namespace vt_global {
+class GlobalCharacter;
+class GlobalObject;
+class GlobalSkill;
+class QuestLogEntry;
+class WorldMapLocation;
+}
 
 namespace vt_menu
 {
@@ -759,14 +766,7 @@ public:
     * location, or NULL if it deson't exist
     * \return Pointer to the currently indexes WorldMapLocation
     */
-    vt_global::WorldMapLocation *GetCurrentViewingLocation()
-    {
-        const std::vector<std::string> &current_location_ids = vt_global::GlobalManager->GetViewableLocationIds();
-        const uint32 N = current_location_ids.size();
-        if( N == 0 || _location_pointer_index > N)
-            return NULL;
-        return vt_global::GlobalManager->GetWorldLocation(current_location_ids[_location_pointer_index]);
-    }
+    vt_global::WorldMapLocation *GetCurrentViewingLocation();
 
 private:
 

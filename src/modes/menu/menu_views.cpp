@@ -17,15 +17,20 @@
 *** \brief   Source file for various menu views.
 *** ***************************************************************************/
 
-#include <iostream>
-#include <sstream>
-#include <algorithm>
+#include "modes/menu/menu_views.h"
+#include "modes/menu/menu.h"
 
 #include "engine/audio/audio.h"
+#include "engine/video/video.h"
 #include "engine/input.h"
 #include "engine/system.h"
 
-#include "modes/menu/menu.h"
+#include "common/global/global.h"
+#include "common/global/global_skills.h"
+
+#include <iostream>
+#include <sstream>
+#include <algorithm>
 
 using namespace vt_menu::private_menu;
 using namespace vt_utils;
@@ -2501,6 +2506,15 @@ void WorldMapWindow::Activate(bool new_state)
     else
         _location_pointer_index = loc - current_location_ids.begin();
 
+}
+
+vt_global::WorldMapLocation *WorldMapWindow::GetCurrentViewingLocation()
+{
+    const std::vector<std::string> &current_location_ids = vt_global::GlobalManager->GetViewableLocationIds();
+    const uint32 N = current_location_ids.size();
+    if( N == 0 || _location_pointer_index > N)
+        return NULL;
+    return vt_global::GlobalManager->GetWorldLocation(current_location_ids[_location_pointer_index]);
 }
 
 } // namespace private_menu

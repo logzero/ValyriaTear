@@ -29,6 +29,9 @@
 
 #include "modes/boot/boot.h"
 
+#include "common/global/global.h"
+#include "common/global/global_skills.h"
+
 using namespace vt_utils;
 using namespace vt_audio;
 using namespace vt_video;

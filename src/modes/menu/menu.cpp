@@ -17,16 +17,19 @@
 *** \brief   Source file for menu mode interface.
 *** ***************************************************************************/
 
-#include <iostream>
-#include <sstream>
+#include "modes/menu/menu.h"
+#include "modes/pause.h"
 
 #include "engine/system.h"
 #include "engine/input.h"
 #include "engine/audio/audio.h"
-#include "modes/pause.h"
-
 #include "engine/mode_manager.h"
-#include "menu.h"
+
+#include "common/global/global.h"
+#include "common/global/global_skills.h"
+
+#include <iostream>
+#include <sstream>
 
 using namespace vt_utils;
 using namespace vt_audio;

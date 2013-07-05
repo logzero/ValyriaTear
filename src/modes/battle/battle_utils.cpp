@@ -23,7 +23,7 @@
 #include "modes/battle/battle.h"
 #include "modes/battle/battle_actors.h"
 
-#include "common/global/global.h"
+//#include "common/global/global.h"
 
 #include "engine/system.h"
 

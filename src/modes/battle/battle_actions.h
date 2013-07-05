@@ -25,8 +25,6 @@
 
 #include "engine/system.h"
 
-#include "common/global/global.h"
-
 #include "utils/utils_random.h"
 
 namespace vt_battle

@@ -31,8 +31,6 @@
 #include "engine/video/video.h"
 #include "engine/video/particle_effect.h"
 
-#include "common/global/global.h"
-
 namespace vt_defs
 {
 

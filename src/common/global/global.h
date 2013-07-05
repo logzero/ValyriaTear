@@ -31,9 +31,7 @@
 #include "engine/script/script_write.h"
 
 #include "global_actors.h"
-#include "global_effects.h"
 #include "global_objects.h"
-#include "global_skills.h"
 #include "global_utils.h"
 
 #include "modes/map/map_utils.h"
