@@ -569,7 +569,7 @@ void ImageDescriptor::_DrawTexture(const Color *draw_color) const
     }
 
     VideoManager->EnableVertexArray();
-    glVertexPointer(2, GL_FLOAT, 0, vert_coords);
+    VideoManager->SetVertexPointer(2, 0, vert_coords);
 
     // If we have a valid image texture poiner, setup texture coordinates and the texture coordinate array for glDrawArrays()
     if(_texture) {
@@ -637,7 +637,7 @@ void ImageDescriptor::_DrawTexture(const Color *draw_color) const
     }
 
     // Use a vertex array to draw all of the vertices
-    glDrawArrays(GL_QUADS, 0, 4);
+    VideoManager->DrawArrays(GL_QUADS, 0, 4);
 } // void ImageDescriptor::_DrawTexture(const Color* color_array) const
 
 
@@ -1665,7 +1665,7 @@ void CompositeImage::Draw(const Color &draw_color) const
         if(coord_sys.GetVerticalDirection() < 0.0f)
             y_scale = -y_scale;
 
-        glScalef(x_scale, y_scale, 1.0f);
+        VideoManager->Scale(x_scale, y_scale);
 
         if(draw_color == Color::white)
             _elements[i].image._DrawTexture(_color);

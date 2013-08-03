@@ -904,9 +904,9 @@ void TextSupervisor::_DrawTextHelper(const uint16 *const text, FontProperties *f
     VideoManager->EnableVertexArray();
     VideoManager->EnableTextureCoordArray();
 
-    GLint vertices[8];
+    GLfloat vertices[8];
     GLfloat tex_coords[8];
-    glVertexPointer(2, GL_INT, 0, vertices);
+    VideoManager->SetVertexPointer(2, 0, vertices);
     glTexCoordPointer(2, GL_FLOAT, 0, tex_coords);
 
     // Iterate through each character in the string and render the character glyphs one at a time
@@ -953,7 +953,7 @@ void TextSupervisor::_DrawTextHelper(const uint16 *const text, FontProperties *f
         tex_coords[7] = 0.0f;
 
         glColor4fv((GLfloat *)&text_color);
-        glDrawArrays(GL_QUADS, 0, 4);
+        VideoManager->DrawArrays(GL_QUADS, 0, 4);
 
         xpos += glyph_info->advance;
     } // for (const uint16* glyph = text; *glyph != 0; glyph++)

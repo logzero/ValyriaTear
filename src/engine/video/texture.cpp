@@ -199,8 +199,8 @@ void TexSheet::DEBUG_Draw() const
 
     // Use a vertex array to draw all of the vertices
     VideoManager->EnableVertexArray();
-    glVertexPointer(2, GL_FLOAT, 0, vertex_coords);
-    glDrawArrays(GL_QUADS, 0, 4);
+    VideoManager->SetVertexPointer(2, 0, vertex_coords);
+    VideoManager->DrawArrays(GL_QUADS, 0, 4);
 } // void TexSheet::DEBUG_Draw() const
 
 // -----------------------------------------------------------------------------
